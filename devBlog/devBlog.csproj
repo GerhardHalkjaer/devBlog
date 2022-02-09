@@ -13,8 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="BLL\" />
     <Folder Include="DAL\" />
     <Folder Include="Repository\IBLL\" />
     <Folder Include="Repository\BLL\" />
