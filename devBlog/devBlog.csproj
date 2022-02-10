@@ -13,7 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DAL\" />
     <Folder Include="Repository\IBLL\" />
     <Folder Include="Repository\BLL\" />
     <Folder Include="Repository\IDAL\" />
