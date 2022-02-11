@@ -1,9 +1,18 @@
+using devBlog.BLL.Interface;
+using devBlog.DAL.Interface;
+using devBlog.DAL.SQL.Interface;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddSingleton<IBlog, devBlog.BLL.Blog>();
+builder.Services.AddSingleton<IStorage, devBlog.DAL.Storage>();
+builder.Services.AddSingleton<ISqlDatabase, devBlog.DAL.SQL.SqlDatabase>();
 
 var app = builder.Build();
+
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

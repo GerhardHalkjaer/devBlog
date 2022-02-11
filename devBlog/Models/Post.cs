@@ -13,6 +13,7 @@ public class Post
     public List<string>? Links { get; set; }
     public List<string>? Filer { get; set; }
     public Auther? Forfatter { get; set; }
+    public List<Tag> Tags { get; set; }
 
 
 }

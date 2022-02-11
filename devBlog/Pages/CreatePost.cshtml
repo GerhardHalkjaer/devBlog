@@ -1,0 +1,29 @@
+﻿@page
+@model devBlog.Pages.CreatePostModel
+@{
+    ViewData["Title"] = "Create new Post";
+}
+
+
+<div>
+    <form method="post">
+        <table>
+            <tr>
+                <td>Overskrift</td>
+                <td><input asp-for="post.Overskrift" type="text" id="txtOverskift" name="Overskrift" /></td>
+            </tr>
+            <tr>
+                <td>BrødText</td>
+                <td><input asp-for="post.BrødText" type="text" id="txtBrødText" name="BrødText" /></td>
+            </tr>
+           
+
+            @*Links
+            Files*@
+
+            <td></td>
+            <td><input type="submit" value="Submit" asp-page-handler="Submit" /></td>
+
+        </table>
+    </form>
+</div>

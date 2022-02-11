@@ -15,6 +15,7 @@ public class IndexModel : PageModel
 
     public void OnGet()
     {
+       
         // get all posts from repository
     }
 }
