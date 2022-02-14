@@ -20,9 +20,8 @@ public class Blog : IBlog
 
     public void CreatePost(Post post)
     {
-        
+        post.Id = _storage.CreatePost(post);
         Posts.Add(post);
-        _storage.CreatePost(post);
     }
 
     public List<Post> GetPosts()

@@ -21,7 +21,7 @@ namespace devBlog.Pages
         {
             if (ModelState.IsValid == true)
             {
-                 Auther auther = new Auther();
+                Auther auther = new Auther();
                 auther.ForNave = "John";
                 auther.EfterNavn = "Doh";
                 post.Forfatter = auther;

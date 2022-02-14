@@ -2,7 +2,11 @@
 
 public interface ISqlDatabase
 {
-    public void CreatePost(Post post);
+    public int CreatePost(Post post);
     public List<Post> GetPosts();
+
+    
+
+
 }
 

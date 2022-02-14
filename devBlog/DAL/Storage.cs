@@ -16,9 +16,9 @@ public class Storage : IStorage
         _db = sqlDb;
     }
 
-    public void CreatePost(Post post)
+    public int CreatePost(Post post)
     {
-        _db.CreatePost(post);
+         return _db.CreatePost(post);
     }
 
     public List<Post> GetPosts()
