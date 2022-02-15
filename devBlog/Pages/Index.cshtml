@@ -4,27 +4,28 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
-
 <div>
     <form method="post">
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
+                   
                     <th>Overskift</th>
                     <th>BrødText</th>
-                    <th>Links</th>
-                    <th>filer</th>
-                    <th>Forfatter</th>
+                   
                 </tr>
             </thead>
 
             <tbody>
-
+                @foreach (var item in Model.postList)
+                {
+                    <tr class="table" onclick="location.href='/PostShow/@item.Id'"> 
+                      
+                        <td>@Html.DisplayFor(m =>item.Overskrift)</td>
+                        <td>@Html.DisplayFor(m =>item.BrødText)</td>
+                   
+                    </tr>
+                }
             </tbody>
 
         </table>

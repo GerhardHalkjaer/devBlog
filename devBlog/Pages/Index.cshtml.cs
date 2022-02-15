@@ -15,7 +15,8 @@ public class IndexModel : PageModel
 
     public void OnGet()
     {
-       
+       postList = _blog.GetPosts();
+
         // get all posts from repository
     }
 }

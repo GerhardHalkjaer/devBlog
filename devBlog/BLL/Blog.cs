@@ -15,7 +15,7 @@ public class Blog : IBlog
     }
 
 
-    public List<Post> Posts { get; set; }
+    public List<Post> Posts { get; private set; } = new();
     DateTime _LastPostUpdated;
 
     public void CreatePost(Post post)
@@ -26,7 +26,7 @@ public class Blog : IBlog
 
     public List<Post> GetPosts()
     {
-        if (_LastPostUpdated == null ||  0 < DateTime.Compare(_LastPostUpdated,DateTime.Now.AddSeconds(-30)))
+        if (0 > DateTime.Compare(_LastPostUpdated, DateTime.Now.AddSeconds(-30)))
         {
             // get from store
             Posts = _storage.GetPosts();
@@ -36,6 +36,9 @@ public class Blog : IBlog
         return Posts;
 
     }
-    
 
+    public Post GetPostById(int id)
+    {
+        return Posts.Find(x => x.Id == id);
+    }
 }

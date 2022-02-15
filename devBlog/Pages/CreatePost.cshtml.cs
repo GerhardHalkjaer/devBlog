@@ -24,6 +24,7 @@ namespace devBlog.Pages
                 Auther auther = new Auther();
                 auther.ForNave = "John";
                 auther.EfterNavn = "Doh";
+                auther.Id = 1;
                 post.Forfatter = auther;
                 //TODO: fix current hardcoded auther.
                 _blog.CreatePost(post);

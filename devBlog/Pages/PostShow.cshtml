@@ -1,0 +1,18 @@
+﻿@page "/PostShow/{Id:int}"
+@model devBlog.Pages.PostShowModel
+@{
+}
+
+
+<div>
+    <p>Overskift: @Model.post.Overskrift</p>
+    <p>Title: @Model.post.BrødText</p>
+    <p>Forfatter: @Model.post.Forfatter.ForNave @Model.post.Forfatter.EfterNavn</p>
+    
+    @*@Model.post.Links*@
+    @*@Model.post.Filer*@
+    @*@Model.post.Tags*@
+
+</div>
+
+

@@ -97,7 +97,7 @@ public class SqlDatabase : ISqlDatabase
                         auther.ForNave = dr.GetString(5);
                         auther.EfterNavn = dr.GetString(6);
                         post.Forfatter = auther;
-                        auther.Posts.Add(post);
+                       // auther.Posts.Add(post);
                         //TODO: fix auther, as i dont think it works as intended
 
 
