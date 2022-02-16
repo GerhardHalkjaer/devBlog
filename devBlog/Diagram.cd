@@ -15,7 +15,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="devBlog.Models.Auther">
-    <Position X="11" Y="2.75" Width="1.5" />
+    <Position X="10.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Auther.cs</FileName>
@@ -24,7 +24,7 @@
   <Class Name="devBlog.BLL.Blog" Collapsed="true">
     <Position X="0.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAABAAAAAABAIAAAAAAAEAAAAAAgAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAQBAAAAAABAIAAAAAAAEAAAAAAgAA=</HashCode>
       <FileName>BLL\Blog.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -32,22 +32,22 @@
   <Class Name="devBlog.DAL.Storage" Collapsed="true">
     <Position X="0.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAIAAAAAAAEAAAAAAAAA=</HashCode>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAgAAAAIAAAAAAAEAABAAAAAA=</HashCode>
       <FileName>DAL\Storage.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="devBlog.Models.Tag">
-    <Position X="8.5" Y="4.5" Width="1.5" />
+    <Position X="6.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
       <FileName>Models\Tag.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="devBlog.DAL.SQL.SqlDatabase" Collapsed="true">
     <Position X="0.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAIAAAAAAAEAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAgAAAAIAAQAAAAEACBAAAAAA=</HashCode>
       <FileName>DAL\SQL\SqlDatabase.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />

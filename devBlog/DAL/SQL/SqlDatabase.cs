@@ -49,7 +49,7 @@ public class SqlDatabase : ISqlDatabase
             }
             catch (Exception)
             {
-
+                //TODO:change to handel the exception, not just throw it.
                 throw;
             }
             finally
@@ -88,7 +88,7 @@ public class SqlDatabase : ISqlDatabase
             }
             catch (Exception)
             {
-
+                //TODO:change to handel the exception, not just throw it.
                 throw;
             }
             finally
@@ -122,7 +122,7 @@ public class SqlDatabase : ISqlDatabase
             }
             catch (Exception)
             {
-
+                //TODO:change to handel the exception, not just throw it.
                 throw;
             }
             finally
@@ -175,6 +175,7 @@ public class SqlDatabase : ISqlDatabase
             }
             catch (Exception)
             {
+                //TODO:change to handel the exception, not just throw it.
                 throw;
             }
             finally
@@ -214,6 +215,7 @@ public class SqlDatabase : ISqlDatabase
             }
             catch (Exception)
             {
+                //TODO:change to handel the exception, not just throw it.
                 throw;
             }
             finally
@@ -253,6 +255,7 @@ public class SqlDatabase : ISqlDatabase
             }
             catch (Exception)
             {
+                //TODO:change to handel the exception, not just throw it.
                 throw;
             }
             finally
