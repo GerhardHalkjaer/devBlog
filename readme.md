@@ -15,6 +15,7 @@ Get a list of all the posts
 
 more detailed information on a post
 
+sql database storage
 
 ### Known issues
 Currently only 1 file entry on frontend, backend supports multiple file entrys.
