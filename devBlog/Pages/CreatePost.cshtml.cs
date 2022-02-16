@@ -16,6 +16,12 @@ namespace devBlog.Pages
 
         [BindProperty]
         public Post post { get; set; }
+        //a quick work around for now
+        [BindProperty]
+        public string link { get; set; } = String.Empty;
+        [BindProperty]
+        public string file { get; set; } = String.Empty;
+
 
         public IActionResult OnPost()
         {
@@ -26,6 +32,8 @@ namespace devBlog.Pages
                 auther.EfterNavn = "Doh";
                 auther.Id = 1;
                 post.Forfatter = auther;
+                post.Links.Add(link);
+                post.Filer.Add(file);
                 //TODO: fix current hardcoded auther.
                 _blog.CreatePost(post);
                 return RedirectToAction("Index");

@@ -11,7 +11,7 @@
                 <tr>
                    
                     <th>Overskift</th>
-                    <th>BrødText</th>
+                    @*<th>BrødText</th>*@
                    
                 </tr>
             </thead>
@@ -22,7 +22,8 @@
                     <tr class="table" onclick="location.href='/PostShow/@item.Id'"> 
                       
                         <td>@Html.DisplayFor(m =>item.Overskrift)</td>
-                        <td>@Html.DisplayFor(m =>item.BrødText)</td>
+                      @*  <td>@Html.DisplayFor(m =>item.BrødText)</td>*@
+
                    
                     </tr>
                 }

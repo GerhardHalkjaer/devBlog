@@ -31,8 +31,8 @@ public class SqlDatabase : ISqlDatabase
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("title", post.Overskrift);
-            cmd.Parameters.AddWithValue("content",post.BrødText);
-            cmd.Parameters.AddWithValue("autherId",post.Forfatter.Id);
+            cmd.Parameters.AddWithValue("content", post.BrødText);
+            cmd.Parameters.AddWithValue("autherId", post.Forfatter.Id);
 
             SqlDataReader dr;
 
@@ -50,7 +50,7 @@ public class SqlDatabase : ISqlDatabase
             }
             catch (Exception)
             {
-                
+
                 throw;
             }
             finally
@@ -59,8 +59,80 @@ public class SqlDatabase : ISqlDatabase
             }
 
         }
+        post.Id = postId;
+        CreateLink(post);
+        CreateFile(post);
 
         return postId;
+    }
+
+   
+    /// <summary>
+    /// Create File entry for posts
+    /// </summary>
+    /// <param name="post"></param>
+    private void CreateFile(Post post)
+    {
+        using (SqlConnection con = new SqlConnection(_strCon))
+        {
+
+            SqlCommand cmd = new SqlCommand("dbo.CreateFiles", con);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("postId", post.Id);
+            cmd.Parameters.AddWithValue("fileLocation", post.Filer[0]); //work around only 1 file.
+
+            try
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+
+        }
+    }
+
+    /// <summary>
+    /// create link entry for the post
+    /// </summary>
+    /// <param name="post"></param>
+    private void CreateLink(Post post)
+    {
+        using (SqlConnection con = new SqlConnection(_strCon))
+        {
+
+            SqlCommand cmd = new SqlCommand("dbo.CreateLinks", con);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("postId", post.Id);
+            cmd.Parameters.AddWithValue("link", post.Links[0]); //work around only 1 link.
+
+            try
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+
+        }
     }
 
     /// <summary>
@@ -69,7 +141,7 @@ public class SqlDatabase : ISqlDatabase
     /// <returns>a List of posts</returns>
     public List<Post> GetPosts()
     {
-        List<Post> posts = new ();
+        List<Post> posts = new();
 
         using (SqlConnection con = new SqlConnection(_strCon))
         {
@@ -97,7 +169,7 @@ public class SqlDatabase : ISqlDatabase
                         auther.ForNave = dr.GetString(5);
                         auther.EfterNavn = dr.GetString(6);
                         post.Forfatter = auther;
-                       // auther.Posts.Add(post);
+                        // auther.Posts.Add(post);
                         //TODO: fix auther, as i dont think it works as intended
 
 
