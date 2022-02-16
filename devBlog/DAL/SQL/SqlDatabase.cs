@@ -15,7 +15,6 @@ public class SqlDatabase : ISqlDatabase
 
     }
 
-
     /// <summary>
     /// save the post to the database
     /// </summary>
@@ -66,7 +65,7 @@ public class SqlDatabase : ISqlDatabase
         return postId;
     }
 
-   
+
     /// <summary>
     /// Create File entry for posts
     /// </summary>
@@ -131,7 +130,6 @@ public class SqlDatabase : ISqlDatabase
                 con.Close();
             }
 
-
         }
     }
 
@@ -153,7 +151,6 @@ public class SqlDatabase : ISqlDatabase
 
             try
             {
-
                 con.Open();
                 dr = cmd.ExecuteReader();
                 if (dr.HasRows)
@@ -171,8 +168,6 @@ public class SqlDatabase : ISqlDatabase
                         post.Forfatter = auther;
                         // auther.Posts.Add(post);
                         //TODO: fix auther, as i dont think it works as intended
-
-
                         posts.Add(post);
                     }
                 }
@@ -180,24 +175,92 @@ public class SqlDatabase : ISqlDatabase
             }
             catch (Exception)
             {
-
                 throw;
             }
             finally
             {
                 con.Close();
             }
-
         }
-
-
-
-
         return posts;
     }
 
+    /// <summary>
+    /// get list of links by post id.
+    /// </summary>
+    /// <param name="postId"></param>
+    /// <returns></returns>
+    public List<string> GetLinksByPostId(int postId)
+    {
+        List<string> _links = new List<string>();
+        using (SqlConnection con = new SqlConnection(_strCon))
+        {
+            SqlCommand cmd = new SqlCommand("dbo.GetLinks", con);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("postId", postId);
 
+            SqlDataReader dr;
+            try
+            {
+                con.Open();
+                dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        _links.Add(dr.GetString(2));
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        return _links;
+    }
 
+    /// <summary>
+    /// get list of files (string) by post id
+    /// </summary>
+    /// <param name="postId"></param>
+    /// <returns></returns>
+    public List<string> GetfileByPostId(int postId)
+    {
+        List<string> _files = new List<string>();
+        using (SqlConnection con = new SqlConnection(_strCon))
+        {
+            SqlCommand cmd = new SqlCommand("dbo.GetFiles", con);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("postId", postId);
+            SqlDataReader dr;
 
+            try
+            {
+                con.Open();
+                dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        _files.Add(dr.GetString(2));
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        return _files;
+    }
 }
 

@@ -25,5 +25,15 @@ public class Storage : IStorage
     {
         return _db.GetPosts();
     }
+
+    public List<string> GetLinksByPostId(int postId)
+    {
+        return _db.GetLinksByPostId(postId);
+    }
+    public List<string> GetfileByPostId(int postId)
+    {
+        return _db.GetfileByPostId(postId);
+    }
+
 }
 

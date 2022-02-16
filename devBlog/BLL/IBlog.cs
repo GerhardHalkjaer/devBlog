@@ -8,6 +8,5 @@ public interface IBlog
     public void CreatePost(Post post);
     public List<Post> GetPosts();
     public Post GetPostById(int id);
-
 }
 
